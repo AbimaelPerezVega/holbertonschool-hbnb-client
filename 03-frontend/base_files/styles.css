@@ -1,32 +1,311 @@
-/* 
-  This is a SAMPLE File to get you started. Follow the instructions on the project to complete the tasks. 
-  You'll probably need to override some of theese styles.
-*/
-
-* {
-    box-sizing: border-box;
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f4f4f4;
+    background-color: #f5f7f8;
     color: #333;
 }
 
+:root {
+    --primary-color: #89ABE3FF;
+    --secondary-color: #55DDE0FF;
+    --accent-color: #FA7268FF;
+    --text-color: #383838FF;
+    --button-color: #274156FF;
+}
+
+/* Header Styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-color);
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-nav a {
-    color: #fff;
+/* Login Button Styles */
+.login-button, .logout-button {
+    background-color: #2bd8ef;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover, .logout-button:hover {
+    background-color: darken(var(--button-color), 10%);
+}
+
+/* nav links */
+nav a, .login-button, .logout-button {
+    color: #FFFFFF;
     text-decoration: none;
+    padding: 0.5rem 1rem;
     margin-left: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
 }
 
+nav a:hover, .login-button:hover, .logout-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Main Content Styles */
 main {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-dropdown {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Place Card Styles for Index Page */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* One column on small screens */
+    }
+}
+
+/* Place Details Styles */
+.place-name {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.place-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.place-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.amenities-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.amenities-list li {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Reviews Styles */
+.reviews-section h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-card .reviewer-name {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.review-card .rating {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Add Review Form Styles */
+.add-review-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.add-review-section h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.review-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.review-form textarea,
+.review-form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.review-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.review-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+    background-color: #fa9c95;
+}
+
+
+.details-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.details-button:hover {
+    background-color: #fa9c95;
+}
+
+
+/* Card Style for Login Form */
+.login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 350px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    padding-bottom: 2rem; /* for the Login word, refactor this*/
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Increase space between input fields */
+    width: 100%;
+}
+
+input[type="email"], input[type="password"] {
+    width: 90%; /* Full width of the form */
+    
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button2 {
+    width: 90%; /* Match input width */
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white; /* testing*/
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button2:hover {
+    background-color: #fa9c95; /* refactor this*/
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
 }
