@@ -1,3 +1,1 @@
-# HBnB Evolution Project - Public access files
-
-
+HBnB Evolution: Part 3 (Client)
