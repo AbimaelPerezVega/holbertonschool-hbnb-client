@@ -205,7 +205,7 @@ h1 {
 .review-form select {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #ccccccdc;
     border-radius: 5px;
     font-size: 1rem;
 }
@@ -227,7 +227,7 @@ h1 {
 }
 
 .review-form button:hover {
-    background-color: #fa9c95;
+    background-color: #faf095;
 }
 
 
@@ -253,7 +253,7 @@ h1 {
 
 /* Card Style for Login Form */
 .login-form {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -278,7 +278,7 @@ input[type="email"], input[type="password"] {
     
     padding: 0.8rem;
     margin-top: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
@@ -295,7 +295,7 @@ input[type="email"], input[type="password"] {
 }
 
 .login-button2:hover {
-    background-color: #fa9c95; /* refactor this*/
+    background-color: #95dafa; /* refactor this*/
 }
 
 /* Footer Styles */
